@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="512"
+   height="512"
+   viewBox="0 0 512 512"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20)"
+   sodipodi:docname="logo.svg"
+   inkscape:export-filename="C:\msys64\home\egoro\explatoms\images\icon.png"
+   inkscape:export-xdpi="9"
+   inkscape:export-ydpi="9"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="px"
+     showgrid="false"
+     showguides="true"
+     inkscape:guide-bbox="true"
+     inkscape:zoom="0.70710678"
+     inkscape:cx="228.39549"
+     inkscape:cy="255.26555"
+     inkscape:window-width="1366"
+     inkscape:window-height="715"
+     inkscape:window-x="-8"
+     inkscape:window-y="22"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1">
+    <sodipodi:guide
+       position="31.908193,263.71713"
+       orientation="1,0"
+       id="guide7488" />
+    <sodipodi:guide
+       position="212.4375,480"
+       orientation="0,-1"
+       id="guide7490" />
+    <sodipodi:guide
+       position="145.70312,260.01563"
+       orientation="0,-1"
+       id="guide7492" />
+    <sodipodi:guide
+       position="251.99518,260.13188"
+       orientation="1,0"
+       id="guide7494" />
+    <sodipodi:guide
+       position="479.9375,262"
+       orientation="1,0"
+       id="guide7598" />
+    <sodipodi:guide
+       position="293.4375,32.000001"
+       orientation="0,-1"
+       id="guide7600" />
+    <sodipodi:guide
+       position="268,252.125"
+       orientation="0,-1"
+       id="guide7602" />
+    <sodipodi:guide
+       position="259.875,82.125001"
+       orientation="1,0"
+       id="guide7604" />
+  </sodipodi:namedview>
+  <defs
+     id="defs2" />
+  <g
+     inkscape:label="Vrstva 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <rect
+       style="fill:#ececec;fill-rule:evenodd;stroke-width:0.995555"
+       id="rect31"
+       width="448"
+       height="448"
+       x="32"
+       y="32"
+       inkscape:transform-center-x="-3.8469774"
+       inkscape:transform-center-y="17.311396"
+       ry="64"
+       rx="64" />
+    <rect
+       style="fill:#cccccc;stroke-width:1.01567"
+       id="rect474"
+       width="8"
+       height="400"
+       x="252"
+       y="56"
+       ry="4.3321333" />
+    <rect
+       style="fill:#cccccc;stroke-width:1.01566"
+       id="rect474-8"
+       width="8"
+       height="400"
+       x="252"
+       y="-456"
+       ry="4.3321333"
+       transform="rotate(90)" />
+    <circle
+       style="fill:#ff1a00;fill-opacity:1;stroke-width:0.483577"
+       id="path792"
+       cx="142"
+       cy="142"
+       inkscape:transform-center-x="-1.0352265"
+       inkscape:transform-center-y="-6.1035156e-06"
+       r="32" />
+    <circle
+       style="fill:#0096ff;fill-opacity:1;stroke-width:0.483303;stroke-miterlimit:4;stroke-dasharray:none"
+       id="path792-2"
+       cx="315"
+       cy="142"
+       r="32" />
+    <circle
+       style="fill:#0096ff;fill-opacity:1;stroke-width:0.483303;stroke-miterlimit:4;stroke-dasharray:none"
+       id="path792-3"
+       cx="425"
+       cy="142"
+       r="32" />
+    <circle
+       style="fill:#0096ff;fill-opacity:1;stroke-width:0.483577"
+       id="path792-0"
+       cx="87"
+       cy="362"
+       r="32" />
+    <circle
+       style="fill:#ff1a00;fill-opacity:1;stroke-width:0.483577"
+       id="path792-8"
+       cx="370"
+       cy="333.33334"
+       r="32" />
+    <circle
+       style="fill:#ff1a00;fill-opacity:1;stroke-width:0.483575"
+       id="path792-05"
+       cx="315"
+       cy="406.66666"
+       r="32" />
+    <circle
+       style="fill:#ff1a00;fill-opacity:1;stroke-width:0.483577"
+       id="path792-6"
+       cx="425"
+       cy="406.66666"
+       r="32" />
+    <circle
+       style="fill:#0096ff;fill-opacity:1;stroke-width:0.483577"
+       id="path792-06"
+       cx="197"
+       cy="362"
+       r="32" />
+  </g>
+</svg>

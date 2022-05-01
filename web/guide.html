@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>User Guide | Explatoms</title>
+        <meta charset="utf-8">
+        <meta name="author" content="Dmitry Egorov">
+        <link rel="stylesheet" type="text/css" href="styles.css">
+    </head>
+    <body>
+        <header class="shadow">
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="guide.html" id="current">User Guide</a>
+                <span id="title">
+                    <img src="images/logo.png" alt="Logo">
+                    Explatoms
+                </span>
+                <a href="story.html">Developer's Story</a>
+                <a href="../docs/build/html/index.html">Docs</a>
+            </nav>
+        </header>
+        
+        <article>
+            <h1>User Guide</h1>
+            <p>Here you can learn how to run and play the game.</p>
+            <section>
+                <h2>Game Rules</h2>
+                <p>The game are played by two players: red and blue.</p>
+                <p>
+                    The game is taking place on a field of squares, on which 
+                    the players place colored atoms. When a square contains 
+                    as many atoms as there are neighbouring squares, the atoms explode: 
+                    they are spread across the neighbouring squares, simultaneously changing the 
+                    color of atoms located on them. 
+                </p>
+                <p>Each player's goal is to leave no further moves to one's opponent.</p>
+            </section>
+            <section>
+                <h3>More Details</h3>
+                <p>
+                    There are three types of squares:
+                </p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th rowspan="2">Type</th>
+                            <th colspan="2">Properties</th>
+                        </tr>
+                        <tr>
+                            <th>Location</th>
+                            <th>Becomes full at</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Corner</td>
+                            <td>In the corners of the field</td>
+                            <td>2 atoms</td>
+                        </tr>
+                        <tr>
+                            <td>Wall</td>
+                            <td>Beside the walls (excluding the corners)</td>
+                            <td>3 atoms</td>
+                        </tr>
+                        <tr>
+                            <td>Normal</td>
+                            <td>The rest of the squares</td>
+                            <td>4 atoms</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p>
+                    The way that one can leave no moves to one's opponent is 
+                    simple enough: once there are a lot of atoms on the field,
+                    the probability of "explosion loops" (i.e. atoms exploding 
+                    infinitely) fairly increases.
+                </p>
+            </section>
+            <section>
+                <h2>Running the Program</h2>
+                <p>
+                    Unfortunately, the only way to run the game for now is 
+                    by building from source.
+                </p>
+                <ol>
+                    <li>
+                        Install PyGObject.
+                        <ul>
+                            <li>
+                                Follow the steps from 
+                                <a href="https://pygobject.readthedocs.io/en/latest/getting_started.html"
+                                target="_blank">here</a> to install PyGObject.
+                            </li>
+                            <li>
+                                You don't need to create any scripts as it says in the instruction, 
+                                follow only the steps related to the installation.
+                            </li>
+                        </ul>
+                    </li>
+                    <li>Windows users: copy the source code directory to <code>C:\msys64\home\your-username</code>.</li>
+                    <li>
+                        Navigate to the source code directory (e.g. <code>cd explatoms</code>).
+                    </li>
+                    <li>
+                        Execute <code>python3 explatoms</code>.
+                    </li>
+                </ol>
+            </section>
+            <section>
+                <h2>Using the Program</h2>
+                <p>The user interface of the game is quite intuitive.</p>
+                <p>
+                    Once you run the game, you will see a window with the field of squares.
+                    Field's default size is medium (8x8).
+                </p>
+                <figure>
+                    <img src="images/first_run.png" alt="The main window" height="400">
+                    <figcaption>The main window after first run.</figcaption>
+                </figure>
+                <p>
+                    You can start playing instantly. The blue player
+                    always goes first. Click on a square where you want to 
+                    place your atom and now let your opponent make a move.
+                </p>
+                <p>
+                    You can also create 
+                    a smaller or a bigger field by clicking 
+                    the menu button at the top left and selecting "New Game". 
+                    In the new game dialog you can select the desired field size.
+                </p>
+                <figure>
+                    <img src="images/new_game.png" alt="The menu and the new game dialog." height="400">
+                    <figcaption>The menu and the new game dialog.</figcaption>
+                </figure>
+                <p>When the game finishes, you will see a dialog that says who won.</p>
+                <figure>
+                    <img src="images/game_over.png" alt="The game over dialog." height="400">
+                    <figcaption>The game over dialog.</figcaption>
+                </figure>
+                <p>
+                    To start a new game, you have to create a new field by clicking 
+                    the menu button at the top left and selecting "New Game".
+                </p>
+            </section>
+        </article>
+
+        <footer class="shadow-inverse">
+            <p>Copyright © 2021 Dmitry Egorov</p>
+            <p class="legal-notice">
+                This website and its content are licensed under a 
+                <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
+                    Creative Commons Attribution-ShareAlike 4.0 International License
+                </a>.
+            </p>
+        </footer>
+    </body>
+</html>

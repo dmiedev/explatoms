@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Developer's Story | Explatoms</title>
+        <meta charset="utf-8">
+        <meta name="author" content="Dmitry Egorov">
+        <link rel="stylesheet" type="text/css" href="styles.css">
+    </head>
+    <body>
+        <header class="shadow">
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="guide.html">User Guide</a>
+                <span id="title">
+                    <img src="images/logo.png" alt="Logo">
+                    Explatoms
+                </span>
+                <a href="story.html" id="current">Developer's Story</a>
+                <a href="../docs/build/html/index.html">Docs</a>
+            </nav>
+        </header>
+        
+        <article>
+            <h1>Developer's Story</h1>
+            <p>In this short article I will share my little story of developing this game.</p>
+            <section>
+                <h2>The Beginning</h2>
+                <p>
+                    I think it all started when I stumbled upon 
+                    <a href="https://www.fsf.org/blogs/rms/20140407-geneva-tedx-talk-free-software-free-society">
+                    Richard Stallman's TEDx talk</a> 
+                    on free software. It has changed my view on software a lot. I realized 
+                    that proprietary software, as Stallman says, is an instrument of unjust 
+                    power. Companies are surely eager to take advantage of such instrument 
+                    for greed by neglecting digital human rights. The importance of these rights is 
+                    obviously growing in today's society, where technology is being centralized more
+                    and more in hands of corporations. Free software is one of essential steps to 
+                    digital freedom, to put the technology under society's control.
+                </p>
+                <p>
+                    After I researched the topic of software, I wanted to install 
+                    <a href="https://www.gnu.org/distros/">a free distibution</a>
+                    of a GNU/Linux system. One of such distributions is <a href="https://pureos.net">PureOS</a>, developed 
+                    by a social purpose corporation <a href="https://puri.sm">Purism</a>. Social purpose corporation 
+                    is basically a company that has legally committed to benefit society and that 
+                    puts social good above profits. It seemed to be that they are the most progressed 
+                    company in this fully-free-software world, so I started looking into PureOS.
+                </p>
+                <p>
+                    PureOS uses <a href="https://www.gnome.org/">GNOME desktop environment</a>, 
+                    which packages a lot of <a href="https://gtk.org">GTK</a> applications. 
+                    So I saw this project of mine as an opportunity 
+                    to get familiar with developing applications using GTK. 
+                </p>
+                <p>
+                    As I was reading about GTK, I also learned about <a href="https://glade.gnome.org">Glade</a>, 
+                    which is a tool for designing 
+                    user interfaces for GTK, so I consider myself quite lucky that I didn't have to program
+                    the majority of the user interface manually.
+                </p>
+            </section>
+            <section>
+                <h2>Program Structure</h2>
+                <p>
+                    This is not my first time developing applications, so I noticed that there is not so much 
+                    content on GTK, particularly complete app development tutorials, as with other (and more popular) 
+                    frameworks, so I had to come up with a project structure quite intuitively. 
+                </p>
+                <p>
+                    I decided that there will be three main components of the program: the user interface, a handler that
+                    manages it, and some object that controls the game's logic and its data.
+                </p>
+                <figure>
+                    <img src="images/chart.png" alt="Program structure">
+                    <figcaption>Program structure</figcaption>
+                </figure>
+                <p>
+                    I took advantage of the capabilities (signals, that is) that GTK's GObject provides to communicate changes in 
+                    the game object to the UI handler.
+                </p>
+                <p>
+                    So, in the end, we have this: the game object inherits from GObject to gain the power to emit signals, that 
+                    something happened in the game, to the UI handler, that in response to these signals modifies widgets in 
+                    the user interface, so it corresponds to reality. And the other way around: the player clicks something in the 
+                    user interface, a GTK widget emits a signal that the UI handler catches. The UI handler then calls a method 
+                    of the game object, and the game object processes the call with the data it has.
+                </p>
+                <p>
+                    I can describe my development process as a procces of constant trial and error. There were a lot 
+                    of things I didn't know as I was only staring with GTK, so some problems that I have encountered took hours to 
+                    solve. 
+                </p>
+            </section>
+            <section>
+                <h2>What Could Be Added</h2>
+                <p>
+                    As I heavily focused on developing a GUI application rather than a console one, I might have 
+                    neglected the possibility of adding a computer opponent to the game. Unfortunately, I have no time 
+                    to implement this now. 
+                </p>
+                <p>
+                    I also wanted to add sound effects so the game is more lively, but that stayed unaccomplished as well.
+                </p>
+                <p>
+                    I think it also could be great to have more customization of the field (choosing specific size of the field), 
+                    the players (adding more players, changing colors of the players), and so on.
+                </p>
+            </section>
+            <section>
+                <h2>What I Have Learned</h2>
+                <p>
+                    This was my first time programming a real app using GTK and Python in general. It's also the first 
+                    time I wrote documentation that is serious enough and fully fledged unit tests. I hope this experience will 
+                    help me somehow in the future!
+                </p>
+            </section>
+            <section>
+                <h2>The End</h2>
+                <p>Thank you for reading this!</p>
+            </section>
+        </article>
+
+        <footer class="shadow-inverse">
+            <p>Copyright © 2021 Dmitry Egorov</p>
+            <p class="legal-notice">
+                This website and its content are licensed under a 
+                <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
+                    Creative Commons Attribution-ShareAlike 4.0 International License
+                </a>.
+            </p>
+        </footer>
+    </body>
+</html>

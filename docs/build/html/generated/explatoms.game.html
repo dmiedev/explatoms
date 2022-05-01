@@ -1,0 +1,468 @@
+<!doctype html>
+<html class="no-js">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="explatoms.player" href="explatoms.player.html" /><link rel="prev" title="explatoms.drawing" href="explatoms.drawing.html" />
+
+    <meta name="generator" content="sphinx-4.3.0, furo 2021.11.23"/>
+        <title>explatoms.game - Explatoms 0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=7f0192ddeb2adecfbaa87ffbcf67d16358b30bc1" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?digest=0af69da206d614734f649b27d4cdc2dd6c31f41d" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  body[data-theme="dark"] {
+    --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+  }
+  @media (prefers-color-scheme: dark) {
+    body:not([data-theme="light"]) {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+  }
+</style></head>
+  <body>
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <path stroke="none" d="M0 0h24v24H0z" />
+      <line x1="4" y1="6" x2="20" y2="6" />
+      <line x1="10" y1="12" x2="20" y2="12" />
+      <line x1="6" y1="18" x2="20" y2="18" />
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../index.html"><div class="brand">Explatoms 0.1 documentation</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../index.html">
+  
+  
+  <span class="sidebar-brand-text">Explatoms 0.1 documentation</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
+  <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <ul class="current">
+<li class="toctree-l1 current has-children"><a class="reference internal" href="../api.html">Packages</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2 current has-children"><a class="reference internal" href="explatoms.html">explatoms</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="explatoms.colors.html">explatoms.colors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="explatoms.drawing.html">explatoms.drawing</a></li>
+<li class="toctree-l3 current current-page"><a class="current reference internal" href="#">explatoms.game</a></li>
+<li class="toctree-l3"><a class="reference internal" href="explatoms.player.html">explatoms.player</a></li>
+<li class="toctree-l3"><a class="reference internal" href="explatoms.square.html">explatoms.square</a></li>
+<li class="toctree-l3"><a class="reference internal" href="explatoms.ui_handler.html">explatoms.ui_handler</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../license.html">GNU Free Documentation License</a></li>
+</ul>
+
+</div>
+</div>
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <div class="content-icon-container">
+          <div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <section id="module-explatoms.game">
+<span id="explatoms-game"></span><h1>explatoms.game<a class="headerlink" href="#module-explatoms.game" title="Permalink to this headline">¶</a></h1>
+<p class="rubric">Classes</p>
+<div class="table-wrapper"><table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%"/>
+<col style="width: 90%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#explatoms.game.FieldType" title="explatoms.game.FieldType"><code class="xref py py-obj docutils literal notranslate"><span class="pre">FieldType</span></code></a>(value)</p></td>
+<td><p>A field type enumeration.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#explatoms.game.Game" title="explatoms.game.Game"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Game</span></code></a>([field_type])</p></td>
+<td><p>A game that contains a field of squares.</p></td>
+</tr>
+</tbody>
+</table></div>
+<dl class="py class">
+<dt class="sig sig-object py" id="explatoms.game.FieldType">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">explatoms.game.</span></span><span class="sig-name descname"><span class="pre">FieldType</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#explatoms.game.FieldType" title="Permalink to this definition">¶</a></dt>
+<dd><p>A field type enumeration.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="explatoms.game.FieldType.BIG">
+<span class="sig-name descname"><span class="pre">BIG</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#explatoms.game.FieldType.BIG" title="Permalink to this definition">¶</a></dt>
+<dd><p>The big field.</p>
+</dd></dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="explatoms.game.FieldType.HUGE">
+<span class="sig-name descname"><span class="pre">HUGE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#explatoms.game.FieldType.HUGE" title="Permalink to this definition">¶</a></dt>
+<dd><p>The huge field.</p>
+</dd></dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="explatoms.game.FieldType.MEDIUM">
+<span class="sig-name descname"><span class="pre">MEDIUM</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#explatoms.game.FieldType.MEDIUM" title="Permalink to this definition">¶</a></dt>
+<dd><p>The medium field.</p>
+</dd></dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="explatoms.game.FieldType.SMALL">
+<span class="sig-name descname"><span class="pre">SMALL</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#explatoms.game.FieldType.SMALL" title="Permalink to this definition">¶</a></dt>
+<dd><p>The small field.</p>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="explatoms.game.FieldType.get_size">
+<span class="sig-name descname"><span class="pre">get_size</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#explatoms.game.FieldType.get_size" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieve the size of <cite>self</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The size of <cite>self</cite>.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><cite>int</cite></p>
+</dd>
+</dl>
+<p>This is meant to be the length of a side of a square field.</p>
+</dd></dl>
+</dd></dl>
+<dl class="py class">
+<dt class="sig sig-object py" id="explatoms.game.Game">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">explatoms.game.</span></span><span class="sig-name descname"><span class="pre">Game</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">field_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#explatoms.game.FieldType" title="explatoms.game.FieldType"><span class="pre">explatoms.game.FieldType</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">FieldType.MEDIUM</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#explatoms.game.Game" title="Permalink to this definition">¶</a></dt>
+<dd><p>A game that contains a field of squares.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>field_type</strong> (<a class="reference internal" href="#explatoms.game.FieldType" title="explatoms.game.FieldType"><em>FieldType</em></a>) – The field type, defaults to 
+<cite>FieldType.MEDIUM</cite>.</p>
+</dd>
+<dt class="field-even">Variables</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>__field_type</strong> (<a class="reference internal" href="#explatoms.game.FieldType" title="explatoms.game.FieldType"><em>FieldType</em></a>) – The field type used in <cite>self</cite>.</p></li>
+<li><p><strong>__current_player</strong> (<a class="reference internal" href="explatoms.player.html#explatoms.player.Player" title="explatoms.player.Player"><em>Player</em></a>) – The player whose move it is now.</p></li>
+<li><p><strong>__field</strong> (<em>list</em><em>[</em><em>list</em><em>[</em><a class="reference internal" href="explatoms.square.html#explatoms.square.Square" title="explatoms.square.Square"><em>Square</em></a><em>]</em><em>]</em>) – The field that is made out of squares.</p></li>
+</ul>
+</dd>
+<dt class="field-odd">GObject Signals</dt>
+<dd class="field-odd"><p></p></dd>
+</dl>
+<div class="table-wrapper"><table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Parameters</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>is-over</p></td>
+<td><p><strong>winner</strong> (<em>Player</em>) – The winner.</p></td>
+<td><p>Is emitted when the game ends.</p></td>
+</tr>
+<tr class="row-odd"><td><p>square-change</p></td>
+<td><ul class="simple">
+<li><p><strong>x</strong> (<em>int</em>) – The x coordinate of the square.</p></li>
+<li><p><strong>y</strong> (<em>int</em>) – The y coordinate of the square.</p></li>
+<li><p><strong>atom_number</strong> (<em>int</em>) – The number of atoms on the square.</p></li>
+<li><p><strong>owner</strong> (<em>Player</em>) – The owner of atoms on the square.</p></li>
+</ul>
+</td>
+<td><p>Is emitted when a square changes.</p></td>
+</tr>
+<tr class="row-even"><td><p>current-player-change</p></td>
+<td><p><strong>current_player</strong> (<em>Player</em>) – The current player.</p></td>
+<td><p>Is emitted when the current player changes.</p></td>
+</tr>
+</tbody>
+</table></div>
+<dl class="py method">
+<dt class="sig sig-object py" id="explatoms.game.Game.__create_field">
+<span class="sig-name descname"><span class="pre">__create_field</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#explatoms.game.Game.__create_field" title="Permalink to this definition">¶</a></dt>
+<dd><p>Fill the field with squares.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><cite>None</cite></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="explatoms.game.Game.__determine_square_type">
+<span class="sig-name descname"><span class="pre">__determine_square_type</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="explatoms.square.html#explatoms.square.SquareType" title="explatoms.square.SquareType"><span class="pre">explatoms.square.SquareType</span></a></span></span><a class="headerlink" href="#explatoms.game.Game.__determine_square_type" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieve the type of a square according to its coordinates in the field.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> (<em>int</em>) – The x coordinate.</p></li>
+<li><p><strong>y</strong> (<em>int</em>) – The y coordinate.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The square type.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><cite>SquareType</cite></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="explatoms.game.Game.__emit_square_changes">
+<span class="sig-name descname"><span class="pre">__emit_square_changes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">changed_squares</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Iterable</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#explatoms.game.Game.__emit_square_changes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Notify listeners of changed squares.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>changed_squares</strong> (<em>Iterable</em>) – Squares that have changed.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><cite>None</cite></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="explatoms.game.Game.__explode_atoms">
+<span class="sig-name descname"><span class="pre">__explode_atoms</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#explatoms.game.Game.__explode_atoms" title="Permalink to this definition">¶</a></dt>
+<dd><p>Explode atoms from the square with given coordinates.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> (<em>int</em>) – The x coordinate of the square.</p></li>
+<li><p><strong>y</strong> (<em>int</em>) – The y coordinate of the square.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><cite>True</cite> if this has resulted in an infinite loop of 
+explosions, <cite>False</cite> otherwise.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><cite>bool</cite></p>
+</dd>
+</dl>
+<p>This explodes atoms until there is no full squares.</p>
+<p>This results in an infinite loop of explosions only if atoms
+of all squares have exploded.</p>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="explatoms.game.Game.__set_current_player">
+<span class="sig-name descname"><span class="pre">__set_current_player</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">player</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="explatoms.player.html#explatoms.player.Player" title="explatoms.player.Player"><span class="pre">explatoms.player.Player</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#explatoms.game.Game.__set_current_player" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the current player and notifies listeners of this change.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>player</strong> (<a class="reference internal" href="explatoms.player.html#explatoms.player.Player" title="explatoms.player.Player"><em>Player</em></a>) – The current player.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><cite>None</cite></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="explatoms.game.Game.get_field_type">
+<span class="sig-name descname"><span class="pre">get_field_type</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="#explatoms.game.FieldType" title="explatoms.game.FieldType"><span class="pre">explatoms.game.FieldType</span></a></span></span><a class="headerlink" href="#explatoms.game.Game.get_field_type" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieve the type of the field used in <cite>self</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The field type used in <cite>self</cite>.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><cite>FieldType</cite></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="explatoms.game.Game.place_atom">
+<span class="sig-name descname"><span class="pre">place_atom</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#explatoms.game.Game.place_atom" title="Permalink to this definition">¶</a></dt>
+<dd><p>Place an atom on the square with given coordinates on behalf
+of the current player.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> (<em>int</em>) – The x coordinate of the square.</p></li>
+<li><p><strong>y</strong> (<em>int</em>) – The y coordinate of the sqaure.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><cite>True</cite> if the atom has been placed, <cite>False</cite> otherwise.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><cite>bool</cite></p>
+</dd>
+</dl>
+<p>An atom cannot be placed on a square with opponent’s atoms.</p>
+<p>This causes <cite>square_change</cite> signals to be emitted.
+If there are no available further moves, emits <cite>is_over</cite> signal.</p>
+</dd></dl>
+</dd></dl>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="explatoms.player.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">explatoms.player</div>
+              </div>
+              <svg><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="explatoms.drawing.html">
+              <svg><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">explatoms.drawing</div>
+                
+              </div>
+            </a>
+        </div>
+
+        <div class="related-information">
+              Copyright &#169; 2021 Dmitry Egorov |
+          Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+          <a href="https://github.com/pradyunsg/furo">Furo theme</a>.
+            | <a class="muted-link" href="../_sources/generated/explatoms.game.rst.txt"
+               rel="nofollow">
+              Show Source
+            </a>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer no-toc">
+      
+      
+      
+    </aside>
+  </div>
+</div><script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/scripts/furo.js"></script>
+    </body>
+</html>

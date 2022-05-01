@@ -1,0 +1,122 @@
+body {
+    font-family: system-ui;
+    margin: 0;
+}
+
+header {
+    padding: 10px 0px;
+}
+
+.shadow {
+    box-shadow: 0 4px 8px 0 #00000033, 0 6px 20px 0 #00000007;
+}
+
+.shadow-inverse {
+    box-shadow: 0 -4px 8px 0 #00000033, 0 -6px 20px 0 #00000007;
+}
+
+.float-left {
+    float: left;
+}
+
+header > nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+nav > a {
+    width: 150px;
+    font-size: 18px;
+    color: black;
+    background-color: white;
+    text-decoration: none;
+    text-align: center;
+}
+
+#current {
+    text-decoration: underline;
+    font-weight: 600;
+}
+
+#current:hover {
+    color: black;
+    background-color: white;
+}
+
+a:hover {
+    color: #0096ff;
+    background-color: white;
+}
+
+#title {
+    font-size: 28px;
+    text-align: center;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+}
+
+#title > img {
+    width: 65px;
+    height: 65px;
+    padding-right: 10px;
+}
+
+footer {
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+article {
+    min-height: 75vh;
+    padding: 50px 75px;
+}
+
+section {
+    display: inline-block;
+}
+
+article p {
+    font-size: 20px;
+}
+
+.perspective {
+    transform: perspective(2500px) rotateY(20deg);
+    margin: 20px;
+}
+
+.legal-notice {
+    font-size: 14px;
+}
+ 
+h1 {
+    font-size: 30px;
+}
+
+table, th, td {
+    border-collapse: collapse;
+    text-align: center;
+    border: 1px solid;
+    padding: 5px;
+}
+
+li {
+    padding: 5px;
+    font-size: 18px;
+}
+
+code {
+    border: solid 1px #e1e4e5;
+    font-size: 75%;
+    white-space: nowrap;
+    color: #e93a27;
+    padding: 5px;
+    background-color: #fdfdfd;
+}
+
+figure {
+    text-align: center;
+}
